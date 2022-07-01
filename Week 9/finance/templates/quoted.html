@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    {{ stock.symbol }}
+{% endblock %}
+
+{% block main %}
+    <div>
+        <table class="table" style="width: 700px;">
+            <thead>
+                <tr>
+                <th scope="col">Symbol</th>
+                <th scope="col">Name</th>
+                <th scope="col">Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{stock.symbol}}</td>
+                    <td>{{stock.name}}</td>
+                    <td>{{stock.price | usd}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}
