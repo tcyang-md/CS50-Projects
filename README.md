@@ -71,4 +71,72 @@ ciphertext: VKXXN
 ```
 
 ## Week 3
+During lecture, lab, and this week's problem set, I became more familiar with time and space complexity. Furthermore, I also became more familiar with algorithms and recursion during my implementation of the plurality and tideman voting systems.
 ### Sort
+These were already-compiled C programs where each implemented a different sorting algorithm and I had to determine which algorithm was which based on compile time of a text file that each contained a different number of numbers arranged in a reversed, shuffled, or sorted order.
+```
+$ time ./[program_name] [filename.txt]
+
+Sort1: bubblesort
+sorted50000:   0.4450s
+reversed50000: 5.7412s
+random50000:   7.3580s
+
+Sort2: mergesort
+sorted50000:   0.3490s
+reversed50000: 0.3320s
+random50000:   0.3460s
+
+Sort3: selectionsort
+sorted50000:   3.0230s
+reversed50000: 2.9510s
+random50000:   3.1190s
+```
+### Plurality
+The program is an implementation of a simple plurality election that takes 9 votes in total.
+```
+$ ./plurality Alice Bob
+Number of voters: 3
+Vote: Alice
+Vote: Bob
+Vote: Alice
+Alice
+```
+### Tideman
+Implementation of a Tideman voting system which is also known as a ranked-choice voting system. In a ranked-choice system, voters can vote for more than one candidate. Instead of just voting for their top-choice, they can rank the candidates in order of preference. In situations that previously would have ended in a tied election could now have a "condorcet winner": the personw ho would have won any head-to-head matchup against another candidate. 
+Generally, Tideman method works by constructing a "graph" of candidates, where an arrow from A to B indicates that A beats B in a head-to-head matchup and A beats C in a head-to-head matchup. The winner would then be A, the "source" of the graph. 
+The issue arises when there's no Condorcet winner in this case A beats B, B beats C, and C beats A. This would result in a draw. To handle this, the algorithm locks in the strongest wins first, or the wins that win by the largest margins. Then adds the rest to the graph. Wins that would have created no Condorcet winner would not occur because the strength of the victory would not create an edge.
+#### Breakdown
+- Tally: determines who preferred the candidate over another and by what margin are they preferred
+- Sort: sorts the pairs of candidates in decreasing order by margin of victory
+- Lock: starting with the strongest pair, go through all pairs of candidates and lock in the pair so long as the pair does not create a cycle in the graph.
+#### Methods
+- `vote`: takes `rank` and `name` then inserts the name into `ranks` array where `ranks[i]` represents the user's `i`th preference.
+- `record_preferences`: function is called once for each voter, takes argument `ranks` array. Function updates a global `preferences[i][j]` array to add the current voter's preferences where each cell represents the number of votes who prefer candidate `i` over candidate `j`
+- 
+#### Example
+```
+./tideman Alice Bob Charlie
+Number of voters: 5
+Rank 1: Alice
+Rank 2: Charlie
+Rank 3: Bob
+
+Rank 1: Alice
+Rank 2: Charlie
+Rank 3: Bob
+
+Rank 1: Bob
+Rank 2: Charlie
+Rank 3: Alice
+
+Rank 1: Bob
+Rank 2: Charlie
+Rank 3: Alice
+
+Rank 1: Charlie
+Rank 2: Alice
+Rank 3: Bob
+
+Charlie
+```
