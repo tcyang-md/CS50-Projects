@@ -1,0 +1,36 @@
+sort1 uses: bubble sort
+
+How do you know?: the worst case for bubblesort is that the data is reversed and the best case is that the data is already sorted so it only has to look at each data once.
+This is consistent with the runtimes as sorted is faster than 1 second while reversed and random take more than 5 seconds.
+
+sort2 uses: merge sort
+
+How do you know?: consistently faster than 1 second which is faster than all the other sort programs
+
+sort3 uses: selection sort
+
+How do you know?: The characteristic of selection sort is that no matter what order the data is, it will always be O(n^2). The average for all the variations of the dataset are all about 3 seconds unlike sort1 which has big
+differences between each dataset variation.
+
+selection:
+    consistently slow
+bubble sort:
+    reverse is terrible
+    pretty fast with sorted
+mergesort:
+    consistently fast
+
+Sort1: bubblesort
+sorted50000:   0.4450s
+reversed50000: 5.7412s
+random50000:   7.3580s
+
+Sort2: mergesort
+sorted50000:   0.3490s
+reversed50000: 0.3320s
+random50000:   0.3460s
+
+Sort3: selectionsort
+sorted50000:   3.0230s
+reversed50000: 2.9510s
+random50000:   3.1190s
