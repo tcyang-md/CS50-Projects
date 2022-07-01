@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <link href="styles.css" rel="stylesheet">
+        <title>Ski Central</title>
+    </head>
+    <body>
+      <header>
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">Ski Central</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Ski Resorts
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="https://www.7springs.com/">Seven Springs</a></li>
+                    <li><a class="dropdown-item" href="https://www.skiwhitetail.com/">Whitetail</a></li>
+                    <li><a class="dropdown-item" href="https://www.libertymountainresort.com/explore-the-resort/about-the-resort/winter-experience.aspx">Liberty</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <script>
+                    var link = "";
+                    if (navigator.geolocation) {
+                        navigator.geolocation.getCurrentPosition(showPosition);
+                    }
+                    function showPosition(position) {
+                      link = link + "https://www.visualcrossing.com/weather-history/" + position.coords.latitude +
+                      "%2C" + position.coords.longitude;
+                    }
+
+                    function getLocation() {
+                      return link;
+                    }
+                    </script>
+                  <a class="nav-link active" aria-current="page" href="#" onClick="document.location.href=getLocation();">Current Weather</a>
+
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="about.html">About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="contact.html">Contact Us</a>
+
+                </li>
+              </ul>
+              <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+              </form>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+      <br />
+      <h1>About</h1>
+      <br />
+      <h3 style="text-align:center">Who am I?</h3>
+      <p class="mx-auto" style="width: 650px">
+        My name is Chris, I'm from Potomac, Maryland and I love to ski. I first learned to ski when my friend's father taught me almost 10 years ago and I've been skiing ever since!
+        I try to Challenge myself everytime I do ski to keep improving every season.
+      </p>
+      <br />
+      <h3 style="text-align:center">Favorite Ski Resorts</h3>
+      <p class="mx-auto" style="width: 650px">
+        Since I live on the east coast, it's very costly for me to travel with my equipment around the country so I've primarily skied driving distance from my house. Seven Springs, Whitetail, and Liberty are some
+        of my favorites close to the DC metro area. The only resorts that I've been to besides the ones near my are Blue Mountain and Mount St. Louis Moonstone in Ontario, Canada were both extremely fun to ski this
+        past winter season.
+      </p>
+      <br />
+      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="bluemtn.jpg" class="d-block w-100" alt="Blue Mountain, Ontario, Canada" height="350">
+          </div>
+          <div class="carousel-item">
+            <img src="mtstlouismoonstone.jpg" class="d-block w-100" alt="Mount St. Louis Moonstone, Ontario, Canada" height="350">
+          </div>
+          <div class="carousel-item">
+            <img src="7springs.jpg" class="d-block w-100" alt="Seven Springs, PA, USA" height="350">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      <br />
+      <h3 style="text-align:center">What am I currently working on?</h3>
+      <p class="mx-auto" style="width: 650px">
+        This past season, I've been trying to deepen my edge angle, maintain a more balanced skiing stance, separate my lower body from my upper body, as well as maintaining control and rhythm throughout blacks and double blacks.
+        It's extremely satisfying to progress in skiing because I'm able to feel my momentum shift much more smoothly as I ski. I'm hoping to learn how to ride the terrain park more confidently and ski in the Northern
+        Applachian Mountains, American Rockies, Canadian Rockies, as well as Europe some day.
+      </p>
+      <br />
+
+      <footer class="bg-light text-center text-lg-start">
+        <!-- Grid container -->
+        <div class="container p-4 pb-0">
+          <form action="">
+            <!--Grid row-->
+            <div class="row">
+              <!--Grid column-->
+              <div class="col-auto mb-4 mb-md-0">
+                <p class="pt-2">
+                  <strong>Sign up for our newsletter</strong>
+                </p>
+              </div>
+              <!--Grid column-->
+
+              <!--Grid column-->
+              <div class="col-md-5 col-12 mb-4 mb-md-0">
+                <!-- Email input -->
+                <div class="form-outline mb-4">
+                  <input type="email" id="form5Example25" class="form-control" />
+                  <label class="form-label" for="form5Example25">Email address</label>
+                </div>
+              </div>
+              <!--Grid column-->
+
+              <!--Grid column-->
+              <div class="col-auto mb-4 mb-md-0">
+                <!-- Submit button -->
+                <button type="submit" class="btn btn-primary mb-4">
+                  Subscribe
+                </button>
+              </div>
+              <!--Grid column-->
+            </div>
+            <!--Grid row-->
+          </form>
+        </div>
+        <!-- Grid container -->
+
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+          © 2020 Copyright:
+          <a class="text-dark" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+        </div>
+        <!-- Copyright -->
+      </footer>
+    </body>
+</html>

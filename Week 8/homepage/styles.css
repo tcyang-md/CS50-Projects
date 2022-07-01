@@ -1,0 +1,33 @@
+table.table tbody tr td,
+table.table thead tr th,
+table.table thead {
+  border-left: 2px solid gray;
+  border-right: 2px solid gray;
+  border-bottom: 2px solid gray;
+}
+
+.carousel {
+  margin: auto;
+  width:640px;
+  height:350px;
+}
+
+h1 {
+  text-align: center;
+}
+
+#contact {
+  margin: auto;
+  width:600px;
+}
+
+#submit-button {
+  margin: auto;
+  position: relative;
+}
+
+.text-center {
+  margin-top: 15px;
+  text-align: center;
+}
+
