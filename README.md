@@ -18,7 +18,7 @@ I completed the course over the course of about a month and a half and here are 
   - Sort
   - Plurality
   - Tideman
-- [Week 4](link)
+- [Week 4](https://github.com/tcyang-md/CS50-Projects/blob/main/README.md#week-4): Memory
 - [Week 5](link)
 - [Week 6](link)
 - [Week 7](link)
@@ -143,3 +143,20 @@ Rank 3: Bob
 
 Charlie
 ```
+
+## Week 4
+Learned much more about how computers allocate memory as well as how to edit and access memory of `.wav`, `.bmp`, and `.jpeg` files.
+### Volume
+Changes volume of a sound file by a given factor. Reads data from the `.wav` file on 16-bit sample at a time and multiplies by `factor` to a new output file.
+```
+$ ./volume [INPUT.wav] [OUTPUT.wav] [factor]
+```
+### Filter
+Program applies filter such as grayscale `g`, reflection `r`, box blur `b`, and edge detection `e` (Sobel Filter) to `.bmp` files.
+```
+$ ./filter -g images/yard.bmp out.bmp
+$ ./filter -r images/yard.bmp out.bmp
+$ ./filter -b images/yard.bmp out.bmp
+$ ./filter -e images/yard.bmp out.bmp
+```
+### Recover
