@@ -7,10 +7,10 @@ I completed the course over the course of about a month and a half and here are 
 - Tideman
 
 # Table of Contents
-- [Week 1](https://github.com/tcyang-md/CS50-Projects/blob/main/README.md#pset-1): Intro to C
+- [Week 1](https://github.com/tcyang-md/CS50-Projects/blob/main/README.md#week-1): Intro to C
   - Mario
   - Credit
-- [Week 2](https://github.com/tcyang-md/CS50-Projects/blob/main/README.md#pset-2): Arrays in C
+- [Week 2](https://github.com/tcyang-md/CS50-Projects/blob/main/README.md#week-2): Arrays in C
   - Scrabble
   - Readability
   - Substitution
