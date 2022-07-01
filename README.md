@@ -113,7 +113,10 @@ The issue arises when there's no Condorcet winner in this case A beats B, B beat
 #### Methods
 - `vote`: takes `rank` and `name` then inserts the name into `ranks` array where `ranks[i]` represents the user's `i`th preference.
 - `record_preferences`: function is called once for each voter, takes argument `ranks` array. Function updates a global `preferences[i][j]` array to add the current voter's preferences where each cell represents the number of votes who prefer candidate `i` over candidate `j`
-- 
+- `add_pairs`: function adds all pairs of candidates where one candidate is preferred to the `pairs` array. A pair of candidates who are tied are not added to the array.
+- `sort_pairs`: function sorts the `pair` array in decreasing order of strength/margin of victory. If there are multiple pairs with the same strength of victory the order does not matter.
+- `lock_pairs`: creates a `locked[][]` graph adding all edges in decreasing order of victory strength and recursively checks if a new locked pair would create a cycle.
+- `print_winner`: prints the name of the candidate who is the source of the graph/winner of the voting.
 #### Example
 ```
 ./tideman Alice Bob Charlie
