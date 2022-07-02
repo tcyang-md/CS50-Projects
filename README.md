@@ -19,7 +19,12 @@ I completed the course over the course of about a month and a half and here are 
   - Plurality
   - Tideman
 - [Week 4](https://github.com/tcyang-md/CS50-Projects/blob/main/README.md#week-4): Memory
-- [Week 5](link)
+  - Volume
+  - Filter
+  - Recover
+- [Week 5]([link](https://github.com/tcyang-md/CS50-Projects/blob/main/README.md#week-5)): Data Structures
+  - Inheritance
+  - Speller
 - [Week 6](link)
 - [Week 7](link)
 - [Week 8](link)
@@ -160,3 +165,48 @@ $ ./filter -b images/yard.bmp out.bmp
 $ ./filter -e images/yard.bmp out.bmp
 ```
 ### Recover
+When photos are deleted on a computer, they are usually just "forgotten" rather than deleted, which means that you can recover JPEGs from computer memory since they start with a specific signature. This exercise uses `fread` to read in a raw file and recovers the images that have been "deleted" from the computer's memory.
+```
+$ ./recover card.raw
+```
+
+## Week 5
+This week was an introduction to data structures including linked lists, hash tables, and tries as well as their benefits and drawbacks.
+### Inheritance
+This program uses pointers to simulate blood type inheritance similar to that of a Punnett Square.
+```
+$ ./inheritance
+Child (Generation 0): blood type OO
+    Parent (Generation 1): blood type AO
+        Grandparent (Generation 2): blood type OA
+        Grandparent (Generation 2): blood type BO
+    Parent (Generation 1): blood type OB
+        Grandparent (Generation 2): blood type AO
+        Grandparent (Generation 2): blood type BO
+```
+### Speller
+An implementation of a spell checker that uses a hash table to store a dictionary of words from disk into memory. My hash function just puts each word into a different bucket depending on what letter the word starts with.
+#### Breakdown
+- `dictionary.c`: loads in a dictionary from a text file, reads each word, hashes it, and places it into the hash table, creating a dictionary in `C`.
+- `speller.c`: essentially creates the "interface" that is shown in the console, records the benchmarks for loading in the file, how many words are in the dictionary or text, etc...
+- `dictionaries/`: directory with dictionary `.txt` files.
+-  `speller50.c`: a correct implementation of the program that I used to check my work.
+-  `texts/`: directory with text files with mispellings that `speller.c` or `speller50.c` can check for.
+-  `keys/`: text file that has all the correct console outputs that would come from a specific text file from `texts/`
+#### Usage
+``` C
+$ ./speller texts/lalaland.txt
+Chazelle
+L
+TECHNO
+L
+...
+WORDS MISSPELLED:     955
+WORDS IN DICTIONARY:  143091
+WORDS IN TEXT:        17756
+TIME IN load:         0.02
+TIME IN check:        0.02
+TIME IN size:         0.00
+TIME IN unload:       0.01
+TIME IN TOTAL:        0.06
+```
