@@ -22,13 +22,20 @@ I completed the course over the course of about a month and a half and here are 
   - Volume
   - Filter
   - Recover
-- [Week 5]([link](https://github.com/tcyang-md/CS50-Projects/blob/main/README.md#week-5)): Data Structures
+- [Week 5](https://github.com/tcyang-md/CS50-Projects/blob/main/README.md#week-5): Data Structures
   - Inheritance
   - Speller
-- [Week 6](link)
-- [Week 7](link)
-- [Week 8](link)
-- [Week 9](link)
+- [Week 6](https://github.com/tcyang-md/CS50-Projects/blob/main/README.md#week-6): Intro to Python
+  - World Cup
+  - DNA
+  - Remake of old exercises
+   - Hello
+   - Mario
+   - Credit
+   - Readability
+- [Week 7](https://github.com/tcyang-md/CS50-Projects/blob/main/README.md#week-7)
+- [Week 8](https://github.com/tcyang-md/CS50-Projects/blob/main/README.md#week-8)
+- [Week 9](https://github.com/tcyang-md/CS50-Projects/blob/main/README.md#week-9)
 
 ## Week 1
 Started learning how to program in C. Both of these programs are fairly simple and straight forward.
@@ -194,6 +201,7 @@ An implementation of a spell checker that uses a hash table to store a dictionar
 -  `texts/`: directory with text files with mispellings that `speller.c` or `speller50.c` can check for.
 -  `keys/`: text file that has all the correct console outputs that would come from a specific text file from `texts/`
 #### Usage
+When implemented correctly both `$ ./speller texts/lalaland.txt` and `$ ./speller50 texts/lalaland.txt` should output the same thing.
 ``` C
 $ ./speller texts/lalaland.txt
 Chazelle
@@ -210,3 +218,42 @@ TIME IN size:         0.00
 TIME IN unload:       0.01
 TIME IN TOTAL:        0.06
 ```
+It's also possible to check the output with a key of the console output. To do this, you must first redirect the output to a file and then compare.
+```
+$ ./speller texts/lalaland.txt > file.txt
+$ diff -y file.txt keys/lalaland.txt
+```
+Lastly, any text file can be spell checked so long as the text file is added to the `texts/` directory by calling `$ ./speller texts/yourfile.txt`
+
+## Week 6
+This week was mainly spent getting used to coding in Python. The different syntax definitely is a big change from C, but there are many quality of life changes in Python that make it much easier to code.
+### World Cup
+Simulates a FIFA World Cup with 16 teams. Outcome is determined through 1000 simulations where the probability of the winner for each match is determined by the FIFA rating of each team.
+```
+$ python tournament.py 2018m.csv
+Belgium: 20.9% chance of winning
+Brazil: 20.3% chance of winning
+Portugal: 14.5% chance of winning
+Spain: 13.6% chance of winning
+Switzerland: 10.5% chance of winning
+Argentina: 6.5% chance of winning
+England: 3.7% chance of winning
+France: 3.3% chance of winning
+Denmark: 2.2% chance of winning
+Croatia: 2.0% chance of winning
+Colombia: 1.8% chance of winning
+Sweden: 0.5% chance of winning
+Uruguay: 0.1% chance of winning
+Mexico: 0.1% chance of winning
+```
+### DNA
+Identifies a person based on their DNA. A person's DNA has repeating sequences called Short Tandem Repeasts (STRs) and each person's STR, their composition and occurence, varies drastically. Therefore, STRs are the key to identifying a person based on their DNA. The program reads in a `.csv` of individuals with their STR counts and counts the unique STRs as seen in the header. It also reads in a `.txt` file with a sequence of data that has not been identified and counts the unique STRs as identified in the heading. Lastly, it compares to see if there's an individual in the `.csv` that has a matching number of STRs.
+```
+$ python dna.py databases/file.csv sequences/file.txt
+Joe
+```
+### Remakes
+- Hello: simple hello world program
+- Mario: exactly the same as the Mario program from week 1 but written in Python
+- Credit: same as `credit.c` from week 1 but written in Python
+- Readability: same as `readability.c` from week 2 but written in Python
