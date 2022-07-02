@@ -29,10 +29,10 @@ I completed the course over the course of about a month and a half and here are 
   - World Cup
   - DNA
   - Remake of old exercises
-   - Hello
-   - Mario
-   - Credit
-   - Readability
+      - Hello
+      - Mario
+      - Credit
+      - Readability
 - [Week 7](https://github.com/tcyang-md/CS50-Projects/blob/main/README.md#week-7)
 - [Week 8](https://github.com/tcyang-md/CS50-Projects/blob/main/README.md#week-8)
 - [Week 9](https://github.com/tcyang-md/CS50-Projects/blob/main/README.md#week-9)
