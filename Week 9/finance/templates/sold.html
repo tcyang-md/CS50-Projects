@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Sold: {{ name }}
+{% endblock %}
+
+{% block main %}
+<h1>Transaction Success</h1>
+<p>
+    Company: {{ name }} <br />
+    Ticker: {{ symbol }} <br />
+    Shares sold: {{ shares }} <br />
+    Price per share: {{ price }} <br />
+    Holding: {{ transaction }} <br />
+    Available cash: {{ new_balance }} <br />
+    Shares remaining: {{ new_shares }}
+</p>
+
+{% endblock %}

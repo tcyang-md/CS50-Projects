@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Purchase Complete
+{% endblock %}
+
+{% block main %}
+    <h1>Transaction Success</h1>
+    <p>
+        Stock: {{ stock.name }} <br />
+        Ticker: {{stock.symbol }} <br />
+        Number of shares: {{ shares }} <br />
+        Price per share: {{ price}} <br />
+        Total: {{ transaction }} <br />
+        New account balance: {{ new_balance }}
+    </p>
+{% endblock %}
