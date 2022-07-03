@@ -7,25 +7,25 @@ I completed the course over the course of about a month and a half and here are 
 - Tideman
 
 # Table of Contents
-- [Week 1](https://github.com/tcyang-md/CS50-Projects/blob/main/README.md#week-1): Intro to C
+- [Week 1:](https://github.com/tcyang-md/CS50-Projects/blob/main/README.md#week-1) Intro to C
   - Mario
   - Credit
-- [Week 2](https://github.com/tcyang-md/CS50-Projects/blob/main/README.md#week-2): Arrays in C
+- [Week 2:](https://github.com/tcyang-md/CS50-Projects/blob/main/README.md#week-2) Arrays in C
   - Scrabble
   - Readability
   - Substitution
-- [Week 3](https://github.com/tcyang-md/CS50-Projects/blob/main/README.md#week-3): Algorithms and Recursion
+- [Week 3:](https://github.com/tcyang-md/CS50-Projects/blob/main/README.md#week-3) Algorithms and Recursion
   - Sort
   - Plurality
   - Tideman
-- [Week 4](https://github.com/tcyang-md/CS50-Projects/blob/main/README.md#week-4): Memory
+- [Week 4:](https://github.com/tcyang-md/CS50-Projects/blob/main/README.md#week-4) Memory
   - Volume
   - Filter
   - Recover
-- [Week 5](https://github.com/tcyang-md/CS50-Projects/blob/main/README.md#week-5): Data Structures
+- [Week 5:](https://github.com/tcyang-md/CS50-Projects/blob/main/README.md#week-5) Data Structures
   - Inheritance
   - Speller
-- [Week 6](https://github.com/tcyang-md/CS50-Projects/blob/main/README.md#week-6): Intro to Python
+- [Week 6:](https://github.com/tcyang-md/CS50-Projects/blob/main/README.md#week-6) Intro to Python
   - World Cup
   - DNA
   - Remake of old exercises
@@ -33,12 +33,16 @@ I completed the course over the course of about a month and a half and here are 
       - Mario
       - Credit
       - Readability
-- [Week 7](https://github.com/tcyang-md/CS50-Projects/blob/main/README.md#week-7): SQL, SQLite
+- [Week 7:](https://github.com/tcyang-md/CS50-Projects/blob/main/README.md#week-7) SQL, SQLite
   - Songs
   - Movies
   - Fiftyville
-- [Week 8](https://github.com/tcyang-md/CS50-Projects/blob/main/README.md#week-8)
-- [Week 9](https://github.com/tcyang-md/CS50-Projects/blob/main/README.md#week-9)
+- [Week 8:](https://github.com/tcyang-md/CS50-Projects/blob/main/README.md#week-8) HTML, CSS, JavaScript, Bootstrap
+  - Trivia
+  - Homepage
+- [Week 9:](https://github.com/tcyang-md/CS50-Projects/blob/main/README.md#week-9) Flask
+  - Birthday
+  - Finance
 
 ## Week 1
 Started learning how to program in C. Both of these programs are fairly simple and straight forward.
@@ -358,3 +362,39 @@ join stars on stars.movie_id=movies.id
 WHERE people.name = 'Kevin Bacon' AND people.birth = 1958)
 AND people.name != "Kevin Bacon";
 ```
+### Fiftyville
+An extremely elaborate mystery/scavenger hunt created by the team of CS50 where you must query the town's security footage, atm transaction, flight, and other databases to find out who stole the CS50 Duck, where they escaped to, and who helped them escape. This was a really fun task that took a couple hours and definitely helped me become more familar with SQL queries.
+### Breakdown
+- `answers.txt`: logs my answers to CS50 mystery
+- `fiftyville.db`: database including tables for `crime_scene_reports`, `interviews`, `atm_transactions`, `bank_accounts`, `airports`, `flights`, `passengers`, `phone_calls`, `people`, and `bakery_security_logs`.
+#### Examples
+1. First, I have to find what I can from police interviews
+``` SQL
+SELECT year, month, day, description FROM crime_scene_reports WHERE description LIKE '%duck%';
+SELECT name, transcript FROM interviews WHERE year = 2021 and month = 7 and day = 28 and transcript LIKE '%bakery%';
+```
+2. Then based on the time and location of the crime from the interviews, I was able to get the names of the individuals that were at the scene of the crime plus or minus 15 minutes.
+``` SQL
+SELECT DISTINCT name, bakery_security_logs.hour, bakery_security_logs.minute, people.license_plate FROM people
+JOIN bakery_security_logs ON people.license_plate = bakery_security_logs.license_plate
+WHERE people.license_plate in
+(SELECT license_plate FROM bakery_security_logs WHERE year = 2021 and month = 7 and day = 28 and activity = 'exit' and hour <= 11 and hour >=10
+) and bakery_security_logs.hour = 10 ORDER BY name;
+```
+
+## Week 8
+This week was an introduction to web development starting with HTML, CSS, and JavaScript. 
+### Trivia
+A basic trivia questions web page implemented in HTML with CSS as well as JavaScript to make it more dynamic.
+#### Instructions
+`$ http-server index.html`
+#### Example
+![image](https://user-images.githubusercontent.com/70073219/177054156-7aef5852-a1cb-44cf-a2d8-ccd7ce4b2f78.png)
+### Homepage
+For this assignment, we were tasked to create a homepage with whatever content we wanted. I decided to make a webpage using a Bootstrap framework that displayed local ski resort information such as snow forecast, trails open, lift status, etc... I also added a couple of extra webpages about myself with a BootStrap carousel containing pictures of ski resorts I've been to as well a contact me form with a dynamic thank you page that personalizes the thank you displayed depending on form submission. There's also a current weather tab on the NavBar that will redirect the user to a webpage displaying the user's location and weather.
+![image](https://user-images.githubusercontent.com/70073219/177054600-aafe2df1-81af-4544-8672-0d8686aad82e.png)
+
+## Week 9
+This week we were able to bring together our SQL, Python, and HTML/CSS/JavaScript/Bootstrap knowledge to create a couple of dynamic web applications.
+### Birthdays
+A web application using HTML/CSS/JavaScript to run the front end of the web application and Python/SQL to handle the back end that stores birthday information. List automatically updates a SQL database and dynamically changes the webpage to reflect a change in the database.
