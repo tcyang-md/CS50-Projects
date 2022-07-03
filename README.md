@@ -33,7 +33,10 @@ I completed the course over the course of about a month and a half and here are 
       - Mario
       - Credit
       - Readability
-- [Week 7](https://github.com/tcyang-md/CS50-Projects/blob/main/README.md#week-7)
+- [Week 7](https://github.com/tcyang-md/CS50-Projects/blob/main/README.md#week-7): SQL, SQLite
+  - Songs
+  - Movies
+  - Fiftyville
 - [Week 8](https://github.com/tcyang-md/CS50-Projects/blob/main/README.md#week-8)
 - [Week 9](https://github.com/tcyang-md/CS50-Projects/blob/main/README.md#week-9)
 
@@ -257,3 +260,101 @@ Joe
 - Mario: exactly the same as the Mario program from week 1 but written in Python
 - Credit: same as `credit.c` from week 1 but written in Python
 - Readability: same as `readability.c` from week 2 but written in Python
+
+## Week 7
+This week was mainly focused on getting comfortable writing SQL queries and being able to quickly obtain correct information from a database. All of the projects this week were "worksheet" like where I had to answer questions by querying/creating a database.
+### Songs
+Contains a database with the top 100 streamed songs on Spotify in 2018. Here are some examples of questions that I had to answer by querying the `songs.db` database.
+#### Schema
+``` SQL
+CREATE TABLE songs (
+    id INTEGER,
+    name TEXT,
+    artist_id INTEGER,
+    danceability REAL,
+    energy REAL,
+    key INTEGER,
+    loudness REAL,
+    speechiness REAL,
+    valence REAL,
+    tempo REAL,
+    duration_ms INTEGER
+);
+CREATE TABLE artists (
+    id INTEGER,
+    name TEXT
+);
+```
+#### Examples
+1. Write a SQL query that lists the names of songs that are by Post Malone
+``` SQL
+SELECT name FROM songs WHERE artist_id == (SELECT id FROM artists WHERE name = 'Post Malone');
+```
+2. Write a SQL query that returns the average energy of songs that are by Drake.
+``` SQL
+SELECT AVG(energy) FROM songs WHERE artist_id = (SELECT id FROM artists Where name = 'Drake');
+```
+### Movies
+SQL queries to answer questions about a database of movies. Each of these tables store distinct information and in order to answer more complicated questions such as "Who starred in the movie Toy Story 2", the SQL query must cross reference the `movies` table to obtain the movie `id`, then get the actors' `person_id` from the `stars` table, then bring up the `name` of the actors and actresses by referencing the `id` or `person_id` in the `people` table.
+#### Schema
+``` SQL
+CREATE TABLE movies (
+                    id INTEGER,
+                    title TEXT NOT NULL,
+                    year NUMERIC,
+                    PRIMARY KEY(id)
+                );
+CREATE TABLE stars (
+                movie_id INTEGER NOT NULL,
+                person_id INTEGER NOT NULL,
+                FOREIGN KEY(movie_id) REFERENCES movies(id),
+                FOREIGN KEY(person_id) REFERENCES people(id)
+            );
+CREATE TABLE directors (
+                movie_id INTEGER NOT NULL,
+                person_id INTEGER NOT NULL,
+                FOREIGN KEY(movie_id) REFERENCES movies(id),
+                FOREIGN KEY(person_id) REFERENCES people(id)
+            );
+CREATE TABLE ratings (
+                movie_id INTEGER NOT NULL,
+                rating REAL NOT NULL,
+                votes INTEGER NOT NULL,
+                FOREIGN KEY(movie_id) REFERENCES movies(id)
+            );
+CREATE TABLE people (
+                id INTEGER,
+                name TEXT NOT NULL,
+                birth NUMERIC,
+                PRIMARY KEY(id)
+            );
+CREATE INDEX idx_year ON movies(year);
+```
+#### Examples
+1. Write a SQL query to list the names of all people who starred in Toy Story.
+``` SQL
+SELECT name FROM people 
+JOIN stars ON people.id = stars.person_id 
+JOIN movies ON stars.movie_id = movies.id 
+WHERE title = 'Toy Story';
+```
+2. Write a SQL query to list all movies released in 2010 and their ratings, in descending order by rating. For movies with the same rating, order them alphabetically by title.
+``` SQL
+SELECT title, rating FROM movies 
+JOIN ratings ON movies.id = ratings.movie_id 
+WHERE movies.year = 2010 
+ORDER BY ratings.rating 
+DESC, movies.title;
+```
+3. Write a SQL query to list the names of all people who starred in a movie in which Kevin Bacon also starred.
+``` SQL
+SELECT DISTINCT name FROM people
+JOIN stars ON stars.person_id = people.id
+JOIN movies ON movies.id = stars.movie_id
+WHERE movies.id in
+(SELECT movies.id FROM movies
+join people on stars.person_id=people.id
+join stars on stars.movie_id=movies.id
+WHERE people.name = 'Kevin Bacon' AND people.birth = 1958)
+AND people.name != "Kevin Bacon";
+```
