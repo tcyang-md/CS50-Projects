@@ -1,10 +1,7 @@
-# CS50 Projects
+# CS50 Projects :computer:
 CS50 is Harvard University's introduction to computer science and the art of programming. An entry-level course taught by David J. Malan, CS50 teaches students how to think algorithmically and solve problems efficiently. Topics include abstraction, algorithms, data structures, encapsulation, resource management, security, software engineering, and web development. Languages include C, Python, SQL, and JavaScript plus CSS and HTML. Problem sets are inspired by real-world domains of biology, cryptography, finance, forensics, and gaming. 
 
 I completed the course over the course of about a month and a half and here are some of the projects that I've finished.
-
-# Most Notable
-- Tideman
 
 # Table of Contents
 - [Week 1:](https://github.com/tcyang-md/CS50-Projects/blob/main/README.md#week-1) Intro to C
@@ -44,7 +41,7 @@ I completed the course over the course of about a month and a half and here are 
   - Birthday
   - Finance
 
-## Week 1
+## Week 1 :video_game::credit_card:
 Started learning how to program in C. Both of these programs are fairly simple and straight forward.
 ### Mario
 Creates a Mario-like pyramid of # of `n` height where `8 >= n >= 1`.
@@ -64,7 +61,7 @@ Number: 4003600000000014
 VISA
 ```
 
-## Week 2
+## Week 2 :pencil2::books::mag_right:
 Second week of C where I became more familiar with the language.
 ### Scrabble
 Determines the winner of a short scrabble-like game, where two players each enter their word, and the higher scoring player wins. 
@@ -89,7 +86,7 @@ plaintext:  HELLO
 ciphertext: VKXXN
 ```
 
-## Week 3
+## Week 3 :open_file_folder::page_facing_up:
 During lecture, lab, and this week's problem set, I became more familiar with time and space complexity. Furthermore, I also became more familiar with algorithms and recursion during my implementation of the plurality and tideman voting systems.
 ### Sort
 These were already-compiled C programs where each implemented a different sorting algorithm and I had to determine which algorithm was which based on compile time of a text file that each contained a different number of numbers arranged in a reversed, shuffled, or sorted order.
@@ -163,7 +160,7 @@ Rank 3: Bob
 Charlie
 ```
 
-## Week 4
+## Week 4 :headphones::camera:
 Learned much more about how computers allocate memory as well as how to edit and access memory of `.wav`, `.bmp`, and `.jpeg` files.
 ### Volume
 Changes volume of a sound file by a given factor. Reads data from the `.wav` file on 16-bit sample at a time and multiplies by `factor` to a new output file.
@@ -184,7 +181,7 @@ When photos are deleted on a computer, they are usually just "forgotten" rather 
 $ ./recover card.raw
 ```
 
-## Week 5
+## Week 5 :family::blue_book:
 This week was an introduction to data structures including linked lists, hash tables, and tries as well as their benefits and drawbacks.
 ### Inheritance
 This program uses pointers to simulate blood type inheritance similar to that of a Punnett Square.
@@ -232,7 +229,7 @@ $ diff -y file.txt keys/lalaland.txt
 ```
 Lastly, any text file can be spell checked so long as the text file is added to the `texts/` directory by calling `$ ./speller texts/yourfile.txt`
 
-## Week 6
+## Week 6 :soccer::hospital:
 This week was mainly spent getting used to coding in Python. The different syntax definitely is a big change from C, but there are many quality of life changes in Python that make it much easier to code.
 ### World Cup
 Simulates a FIFA World Cup with 16 teams. Outcome is determined through 1000 simulations where the probability of the winner for each match is determined by the FIFA rating of each team.
@@ -265,7 +262,7 @@ Joe
 - Credit: same as `credit.c` from week 1 but written in Python
 - Readability: same as `readability.c` from week 2 but written in Python
 
-## Week 7
+## Week 7 :notes::question::movie_camera:
 This week was mainly focused on getting comfortable writing SQL queries and being able to quickly obtain correct information from a database. All of the projects this week were "worksheet" like where I had to answer questions by querying/creating a database.
 ### Songs
 Contains a database with the top 100 streamed songs on Spotify in 2018. Here are some examples of questions that I had to answer by querying the `songs.db` database.
@@ -382,7 +379,7 @@ WHERE people.license_plate in
 ) and bakery_security_logs.hour = 10 ORDER BY name;
 ```
 
-## Week 8
+## Week 8 :ski:
 This week was an introduction to web development starting with HTML, CSS, and JavaScript. 
 ### Trivia
 A basic trivia questions web page implemented in HTML with CSS as well as JavaScript to make it more dynamic.
@@ -394,7 +391,7 @@ A basic trivia questions web page implemented in HTML with CSS as well as JavaSc
 For this assignment, we were tasked to create a homepage with whatever content we wanted. I decided to make a webpage using a Bootstrap framework that displayed local ski resort information such as snow forecast, trails open, lift status, etc... I also added a couple of extra webpages about myself with a BootStrap carousel containing pictures of ski resorts I've been to as well a contact me form with a dynamic thank you page that personalizes the thank you displayed depending on form submission. There's also a current weather tab on the NavBar that will redirect the user to a webpage displaying the user's location and weather.
 ![image](https://user-images.githubusercontent.com/70073219/177054600-aafe2df1-81af-4544-8672-0d8686aad82e.png)
 
-## Week 9
+## Week 9 :birthday::dollar:
 This week we were able to bring together our SQL, Python, and HTML/CSS/JavaScript/Bootstrap knowledge to create a couple of dynamic web applications.
 ### Birthdays
 A web application using HTML/CSS/JavaScript to run the front end of the web application and Python/SQL to handle the back end that stores birthday information. Web page automatically updates a SQL database and dynamically changes the table to reflect the addition or removal of a birthday in the database.
