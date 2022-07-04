@@ -397,7 +397,7 @@ This week we were able to bring together our SQL, Python, and HTML/CSS/JavaScrip
 A web application using HTML/CSS/JavaScript to run the front end of the web application and Python/SQL to handle the back end that stores birthday information. Web page automatically updates a SQL database and dynamically changes the table to reflect the addition or removal of a birthday in the database.
 ![image](https://user-images.githubusercontent.com/70073219/177056137-028548e6-35d8-4331-9e44-ec3c332d2dc6.png)
 ### Finance
-Implementation of C$50 Finance, a web application where you can register/log-in to an account (Flask sessions, SQL), "buy" and "sell" stocks (data from IEX API), and track your portfolio history (more SQL, Jinja).
+Implementation of C$50 Finance, a web application where you can register/log-in to an account (Flask sessions, SQL), "buy" and "sell" stocks (data from IEX API), and track your portfolio history (more SQL, Jinja 2).
 #### Functions
 - Register/Log In/Change Password
 - Check portfolio
