@@ -4,25 +4,25 @@ CS50 is Harvard University's introduction to computer science. An entry-level co
 I completed the course over the course of about a month and a half and here are some of the projects that I've finished.
 
 # Table of Contents
-- [Week 1:](https://github.com/tcyang-md/CS50-Projects/blob/main/README.md#week-1) Intro to C
+- [Week 1:](https://github.com/tcyang-md/CS50-Projects/blob/main/README.md#week-1-video_gamecredit_card) Intro to C
   - Mario
   - Credit
-- [Week 2:](https://github.com/tcyang-md/CS50-Projects/blob/main/README.md#week-2) Arrays in C
+- [Week 2:](https://github.com/tcyang-md/CS50-Projects/blob/main/README.md#week-2-pencil2booksmag_right) Arrays in C
   - Scrabble
   - Readability
   - Substitution
-- [Week 3:](https://github.com/tcyang-md/CS50-Projects/blob/main/README.md#week-3) Algorithms and Recursion
+- [Week 3:](https://github.com/tcyang-md/CS50-Projects/blob/main/README.md#week-3-open_file_folderpage_facing_up) Algorithms and Recursion
   - Sort
   - Plurality
   - Tideman
-- [Week 4:](https://github.com/tcyang-md/CS50-Projects/blob/main/README.md#week-4) Memory
+- [Week 4:](https://github.com/tcyang-md/CS50-Projects/blob/main/README.md#week-4-headphonescamera) Memory
   - Volume
   - Filter
   - Recover
-- [Week 5:](https://github.com/tcyang-md/CS50-Projects/blob/main/README.md#week-5) Data Structures
+- [Week 5:](https://github.com/tcyang-md/CS50-Projects/blob/main/README.md#week-5-familyblue_book) Data Structures
   - Inheritance
   - Speller
-- [Week 6:](https://github.com/tcyang-md/CS50-Projects/blob/main/README.md#week-6) Intro to Python
+- [Week 6:](https://github.com/tcyang-md/CS50-Projects/blob/main/README.md#week-6-soccerhospital) Intro to Python
   - World Cup
   - DNA
   - Remake of old exercises
@@ -30,14 +30,14 @@ I completed the course over the course of about a month and a half and here are 
       - Mario
       - Credit
       - Readability
-- [Week 7:](https://github.com/tcyang-md/CS50-Projects/blob/main/README.md#week-7) SQL, SQLite
+- [Week 7:](https://github.com/tcyang-md/CS50-Projects/edit/main/README.md#week-7-notesquestionmovie_camera) SQL, SQLite
   - Songs
   - Movies
   - Fiftyville
-- [Week 8:](https://github.com/tcyang-md/CS50-Projects/blob/main/README.md#week-8) HTML, CSS, JavaScript, Bootstrap
+- [Week 8:](https://github.com/tcyang-md/CS50-Projects/blob/main/README.md#week-8-ski) HTML, CSS, JavaScript, Bootstrap
   - Trivia
   - Homepage
-- [Week 9:](https://github.com/tcyang-md/CS50-Projects/blob/main/README.md#week-9) Flask, Jinja, Intro to Full Stack Web Development
+- [Week 9:](https://github.com/tcyang-md/CS50-Projects/blob/main/README.md#week-9-birthdaydollar) Flask, Jinja, Intro to Full Stack Web Development
   - Birthday
   - Finance
 
